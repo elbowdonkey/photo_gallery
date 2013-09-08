@@ -3,11 +3,7 @@ PhotoGallery::Application.routes.draw do
 
   get '/logout', :to => 'users/sessions#destroy'
 
-  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" } do
-    get '/users/auth/:provider' => 'users/omniauth_callbacks#passthru'
-    get 'sign_in', :to => 'users/sessions#new', :as => :new_user_session
-    delete 'sign_out', :to => 'users/sessions#destroy', :as => :destroy_user_session
-  end
+  devise_for :users
 
   root :to => "galleries#index"
   # The priority is based upon order of creation: first created -> highest priority.

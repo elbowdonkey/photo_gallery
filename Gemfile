@@ -11,8 +11,6 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 gem 'unicorn'
 gem "devise", "~> 3.1.0"
-gem "omniauth", "~> 1.1.4"
-gem "omniauth-twitter", "~> 1.0.0"
 gem "bootstrap-sass", "~> 2.3.2.2"
 
 group :development, :test do
