@@ -1,4 +1,8 @@
 PhotoGallery::Application.routes.draw do
+  resources :ratings
+
+  resources :photos
+
   resources :galleries
 
   get '/logout', :to => 'users/sessions#destroy'
