@@ -1,0 +1,7 @@
+#footer
+  .container
+    %p.text-muted.credit
+      - if current_user
+        = link_to "Sign out", logout_path
+      - else
+        = link_to "Sign in", new_user_session_path
