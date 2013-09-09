@@ -1,3 +1,12 @@
-# Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://coffeescript.org/
+console.log("gallery controller is included")
+
+GalleryCtrl = ($scope) ->
+  $scope.photos = {}
+  console.log("gallery controller is here")
+
+  $scope.doAThing = ->
+    console.log('done')
+
+  $scope.addPhoto = ->
+    $scope.photos.push
+      filepicker_url: $scope.filepicker_url

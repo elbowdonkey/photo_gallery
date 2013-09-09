@@ -56,5 +56,30 @@ describe GalleriesController do
         expect(response).to redirect_to(new_user_session_url)
       end
     end
+
+    context "as javascript client" do
+      render_views
+
+      context "when signed in" do
+        before(:each) do
+          sign_in gallery_a.user
+
+          gallery_a.photos.create(filepicker_url: "http://foo1")
+          gallery_a.photos.create(filepicker_url: "http://foo2")
+          gallery_b.photos.create(filepicker_url: "http://foo3")
+          gallery_b.photos.create(filepicker_url: "http://foo4")
+        end
+
+        it "#index" do
+          get :index, format: :json
+          expect(response.header['Content-Type']).to include('application/json')
+        end
+
+        it "#show/n" do
+          get :show, format: :json, id: gallery_a.id
+          expect(response.header['Content-Type']).to include('application/json')
+        end
+      end
+    end
   end
 end

@@ -1,0 +1,1 @@
+json.(gallery, :id, :title)

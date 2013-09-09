@@ -11,4 +11,9 @@
 // about supported directives.
 //
 //= require turbolinks
+//= require angular
+//= require angular-bootstrap
+//= require angular-resource
 //= require_tree .
+//= require galleries
+

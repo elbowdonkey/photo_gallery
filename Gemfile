@@ -12,6 +12,7 @@ gem 'jbuilder', '~> 1.2'
 gem 'unicorn'
 gem 'devise', '~> 3.1.0'
 gem 'bootstrap-sass', '~> 2.3.2.2'
+gem 'filepicker-rails'
 
 group :development, :test do
   gem 'pry'
