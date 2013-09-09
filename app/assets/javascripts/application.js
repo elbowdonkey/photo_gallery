@@ -15,5 +15,6 @@
 //= require angular-bootstrap
 //= require angular-resource
 //= require_tree .
-//= require galleries
+//= require services
+//= require controllers
 

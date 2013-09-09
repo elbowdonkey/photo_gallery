@@ -1,0 +1,49 @@
+# App Controllers
+AppCtrl = ($route, $xhr) ->
+  $xhr.defaults.headers.post["Content-Type"] = "application/json"
+  $xhr.defaults.headers.put["Content-Type"] = "application/json"
+
+
+  $route.when "",
+    template: '<%= asset_path("galleries.html") %>'
+    controller: GalleriesCtrl
+
+  $route.when ":gallery_id",
+    template: '<%= asset_path("gallery.html") %>'
+    controller: GalleryCtrl
+
+  $route.when ":gallery_id/photos",
+    template: '<%= asset_path("photos.html") %>'
+    controller: PhotosCtrl
+
+  $route.when ":gallery_id/photos/:photo_id",
+    template: '<%= asset_path("photo.html") %>'
+    controller: PhotoCtrl
+
+  $route.otherwise redirectTo: "/"
+
+GalleryCtrl = (Gallery, $routeParams) ->
+  # gallery specific things here
+  @gallery = Gallery.index(gallery_id: $routeParams.photographer_id)
+
+GalleriesCtrl = (Galleries, $routeParams) ->
+  # gallery specific things here
+  @galleries = Galleries.index(gallery_id: $routeParams.gallery_id)
+
+PhotosCtrl = (Photos, Galleries, $routeParams) ->
+  # photo specific things here
+
+PhotoCtrl = (Photo, $routeParams) ->
+  # single photograph specific things here
+
+AppCtrl.$inject       = ["$route", "$xhr"]
+GalleryCtrl.$inject   = ["Gallery", "$routeParams"]
+GalleriesCtrl.$inject = ["Galleries", "$routeParams"]
+PhotosCtrl.$inject    = ["Photos", "Galleries", "$routeParams"]
+PhotoCtrl.$inject     = ["Photo", "$routeParams"]
+
+window.AppCtrl        = AppCtrl
+window.GalleriesCtrl  = GalleriesCtrl
+window.GalleryCtrl    = GalleryCtrl
+window.PhotosCtrl     = PhotosCtrl
+window.PhotoCtrl      = PhotoCtrl
