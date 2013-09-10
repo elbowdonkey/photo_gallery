@@ -1,9 +1,6 @@
 class Api::GalleriesController < ApplicationController
   before_filter :authenticate_user!, only: [:new]
 
-  layout false
-  respond_to :json
-
   def index
     respond_with :api, Gallery.all
   end

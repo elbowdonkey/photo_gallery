@@ -9,7 +9,7 @@ app.config ($stateProvider, $urlRouterProvider) ->
       views:
         "":
           controller: "ApplicationController"
-          templateUrl: "/assets/layouts/application.html.haml"
+          templateUrl: "/assets/layouts/default.html.haml"
 
     # Galleries
     .state "galleries",

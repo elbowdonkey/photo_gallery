@@ -1,15 +1,11 @@
-<!doctype html>
-%html{"xmlns:ng" => "http://angularjs.org/", "ng-app" => "app"}
+!!!
+%html{"ng-app" => "app"}
   %head
-    %meta{:charset => "utf-8"}/
-    %title Photo Gallery
-    = stylesheet_link_tag "application"
-    = filepicker_js_include_tag
-    %script{"ng:autobind" => "", :src => "/javascripts/angular.min.js"}
+    %title ProjectOne
+    = stylesheet_link_tag    "application", :media => "all"
     = javascript_include_tag "application"
-    = csrf_meta_tag
-  %body{"ng-controller" => "GalleriesController"}
-    #wrap{"ui-view" => ""}
-      %div.container
-        = yield
+    = filepicker_js_include_tag
+    = csrf_meta_tags
+  %body
+    = yield
     = render "shared/nav"

@@ -4,6 +4,7 @@ require File.expand_path("../../config/environment", __FILE__)
 require 'rspec/rails'
 require 'rspec/autorun'
 
+require File.expand_path("app/controllers/api/base_controller.rb")
 require File.expand_path("app/controllers/api/galleries_controller.rb")
 
 # Requires supporting ruby files with custom matchers and macros, etc,
