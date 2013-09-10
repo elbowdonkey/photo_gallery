@@ -1,4 +1,6 @@
 PhotoGallery::Application.routes.draw do
+  devise_for :users
+
   namespace :api do
     resources :galleries
     resources :photos
@@ -11,7 +13,7 @@ PhotoGallery::Application.routes.draw do
 
   get '/logout', :to => 'users/sessions#destroy'
 
-  devise_for :users
+
 
   root :to => "home#index"
   # The priority is based upon order of creation: first created -> highest priority.

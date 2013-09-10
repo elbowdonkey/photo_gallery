@@ -13,7 +13,7 @@ app.config ($stateProvider, $urlRouterProvider) ->
 
     # Galleries
     .state "galleries",
-      parent: "default"
+      parent: "default" # aka 'index'
       url: "/galleries"
       views:
         "":
