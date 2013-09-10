@@ -5,12 +5,12 @@
     %title Photo Gallery
     = stylesheet_link_tag "application"
     = filepicker_js_include_tag
-    = csrf_meta_tag
-  %body{"ng:controller" => "AppCtrl"}
-    %ng:view
     %script{"ng:autobind" => "", :src => "/javascripts/angular.min.js"}
     = javascript_include_tag "application"
+    = csrf_meta_tag
+  %body{"ng:controller" => "AppCtrl"}
     #wrap
       %div.container
-        = yield
+        %ng:view
+          = yield
     = render "shared/nav"

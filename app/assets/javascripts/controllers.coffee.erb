@@ -3,6 +3,11 @@ AppCtrl = ($route, $xhr) ->
   $xhr.defaults.headers.post["Content-Type"] = "application/json"
   $xhr.defaults.headers.put["Content-Type"] = "application/json"
 
+  # token = $("meta[name='csrf-token']").attr("content")
+  # $xhr.defaults.headers.post["X-CSRF-Token"] = token
+  # $xhr.defaults.headers.put["X-CSRF-Token"] = token
+  # $xhr.defaults.headers["delete"]["X-CSRF-Token"] = token
+
 
   $route.when "",
     template: '<%= asset_path("galleries.html") %>'
@@ -24,11 +29,11 @@ AppCtrl = ($route, $xhr) ->
 
 GalleryCtrl = (Gallery, $routeParams) ->
   # gallery specific things here
-  @gallery = Gallery.index(gallery_id: $routeParams.photographer_id)
+  #@gallery = Gallery.index(gallery_id: $routeParams.photographer_id)
 
 GalleriesCtrl = (Galleries, $routeParams) ->
   # gallery specific things here
-  @galleries = Galleries.index(gallery_id: $routeParams.gallery_id)
+  @galleries = Galleries.index()
 
 PhotosCtrl = (Photos, Galleries, $routeParams) ->
   # photo specific things here
