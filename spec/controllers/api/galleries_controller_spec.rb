@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe GalleriesController do
+describe Api::GalleriesController do
   describe "GET index" do
     let(:gallery_a) { FactoryGirl.create(:gallery) }
     let(:gallery_b) { FactoryGirl.create(:gallery) }
