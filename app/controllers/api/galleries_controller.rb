@@ -33,6 +33,7 @@ class Api::GalleriesController < ApplicationController
   def gallery_params
     params.require(:gallery).permit(:title)
   end
+end
 
 # before_filter :find_galleries, only: [:index]
 #   before_filter :find_gallery,   only: [:show]
