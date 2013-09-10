@@ -5,6 +5,10 @@ PhotoGallery::Application.routes.draw do
     resources :ratings
   end
 
+  get '/' => 'home#index'
+  get '/galleries' => 'home#index'
+  get '/galleries/*page' => 'home#index'
+
   get '/logout', :to => 'users/sessions#destroy'
 
   devise_for :users

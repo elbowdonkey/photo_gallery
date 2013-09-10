@@ -7,7 +7,7 @@ app.controller "GalleriesController", ($scope, $http, $location, $state, $stateP
   if $state.current.name == 'galleries'
     Galleries.query({}
     , (response) ->
-      $scope.galleries = response
+        $scope.galleries = response
     , (response) ->
       # do stuff on error
     )
@@ -16,7 +16,7 @@ app.controller "GalleriesController", ($scope, $http, $location, $state, $stateP
     Galleries.get
       id: $stateParams['id']
     , (response) ->
-      $scope.gallery = response
+        $scope.gallery = response
     , (response) ->
       # do stuff on error
 
@@ -26,7 +26,7 @@ app.controller "GalleriesController", ($scope, $http, $location, $state, $stateP
     , gallery:
         title: $scope.gallery.title
     , (response) ->
-      $location.path ""
+        $location.path ""
     , (response) ->
       # do stuff on error
     )
@@ -35,7 +35,7 @@ app.controller "GalleriesController", ($scope, $http, $location, $state, $stateP
     Galleries.get
       id: $stateParams['id']
     , (response) ->
-      $scope.gallery = response
+        $scope.gallery = response
     , (response) ->
 
   $scope.update = ->
@@ -44,7 +44,7 @@ app.controller "GalleriesController", ($scope, $http, $location, $state, $stateP
     , gallery:
         title: $scope.gallery.title
     , (response) ->
-      $location.path ""
+        $location.path ""
     , (response) ->
 
   $scope.destroy = (id) ->

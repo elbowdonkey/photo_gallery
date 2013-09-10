@@ -9,7 +9,7 @@ app.config ($stateProvider, $urlRouterProvider) ->
       views:
         "":
           controller: "ApplicationController"
-          templateUrl: "/assets/layouts/default.html.haml"
+          templateUrl: "/assets/layouts/default.html"
 
     # Galleries
     .state "galleries",
@@ -18,7 +18,7 @@ app.config ($stateProvider, $urlRouterProvider) ->
       views:
         "":
           controller: "GalleriesController"
-          templateUrl: "/assets/galleries/index.html.haml"
+          templateUrl: "/assets/galleries/index.html"
 
     .state "new",
       parent: "galleries"
@@ -26,7 +26,7 @@ app.config ($stateProvider, $urlRouterProvider) ->
       views:
         "@default":
           controller: "GalleriesController"
-          templateUrl: "/assets/galleries/new.html.erb"
+          templateUrl: "/assets/galleries/new.html"
 
     .state "edit",
       parent: "galleries"
@@ -34,4 +34,4 @@ app.config ($stateProvider, $urlRouterProvider) ->
       views:
         "@default":
           controller: "GalleriesController"
-          templateUrl: "/assets/galleries/edit.html.erb"
+          templateUrl: "/assets/galleries/edit.html"

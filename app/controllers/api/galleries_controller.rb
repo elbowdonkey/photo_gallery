@@ -1,4 +1,4 @@
-class Api::GalleriesController < ApplicationController
+class Api::GalleriesController < Api::BaseController
   before_filter :authenticate_user!, only: [:new]
 
   def index
